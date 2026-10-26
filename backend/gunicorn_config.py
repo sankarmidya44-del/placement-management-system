@@ -1,15 +1,15 @@
 import os
 
-# Gunicorn production configuration for Render
-port = os.getenv('PORT', '5000')
+# Render sets PORT in environment (defaults to 10000 on Render)
+port = os.getenv('PORT', '10000')
 bind = f"0.0.0.0:{port}"
 
-# Free tier container optimization (2 workers, 4 threads per worker)
-workers = int(os.getenv('WEB_CONCURRENCY', '2'))
+# Free tier container optimization
+workers = int(os.getenv('WEB_CONCURRENCY', '1'))
 threads = int(os.getenv('PYTHON_GET_THREADS', '4'))
 worker_class = 'gthread'
 
-# Generous timeout to accommodate free tier cold starts and Neon connection wakeups
+# Generous timeout for serverless Neon database connection wakeup
 timeout = 120
 keepalive = 5
 
