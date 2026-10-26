@@ -1,10 +1,10 @@
 /**
  * SPMS Frontend Runtime Configuration
- * Allows configuring the Render backend API endpoint dynamically.
+ * Points to the live Render backend deployment.
  */
 window.SPMS_CONFIG = {
-    // Default fallback to current host or Render cloud backend
-    API_BASE_URL: localStorage.getItem('spms_backend_url') || window.location.origin,
+    // Live Render Cloud Backend
+    API_BASE_URL: localStorage.getItem('spms_backend_url') || 'https://spms-backend-jt6l.onrender.com',
 
     // Helper to get fully-qualified URL
     getUrl(path) {
@@ -13,7 +13,7 @@ window.SPMS_CONFIG = {
         return `${base}${cleanPath}`;
     },
 
-    // Save custom backend URL
+    // Save custom backend URL if switched
     setBackendUrl(url) {
         if (!url) return;
         const normalized = url.trim().replace(/\/+$/, '');

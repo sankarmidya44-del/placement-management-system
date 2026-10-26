@@ -25,6 +25,10 @@
     {
       "source": "/portal",
       "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://spms-backend-jt6l.onrender.com/$1"
     }
   ]
 }
