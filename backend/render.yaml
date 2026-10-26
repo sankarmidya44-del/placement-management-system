@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: spms-backend
+    env: python
+    region: singapore # Closest to ap-southeast-1 Neon region
+    plan: free
+    branch: main
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -c gunicorn_config.py wsgi:app"
+    healthCheckPath: /health
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_nCVKtBg2dhM4@ep-blue-wave-b3o5k41a-pooler.c-4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: "*"

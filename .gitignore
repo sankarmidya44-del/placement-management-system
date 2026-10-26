@@ -1,0 +1,33 @@
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environment secrets
+.env
+.env.local
+backend/.env
+backend/.env.local
+
+# Databases & local instances
+instance/
+*.sqlite
+*.sqlite3
+*.db
+
+# Node & frontend cache
+node_modules/
+.vercel/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
