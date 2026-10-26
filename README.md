@@ -2,9 +2,9 @@
 
 An enterprise, cloud-native Student Placement Management System (SPMS) designed for college placement cells and corporate recruiters.
 
+- **Live Frontend (Vercel Edge):** [https://placement-management-system-fronten-puce.vercel.app](https://placement-management-system-fronten-puce.vercel.app)
+- **Live Backend (Render Web Service):** [https://spms-backend-jt6l.onrender.com](https://spms-backend-jt6l.onrender.com)
 - **Cloud Database:** Serverless **Neon PostgreSQL** with connection pooling & SSL
-- **Backend Service:** **Python Flask 3.1 & Gunicorn** (optimized for **Render Free Tier**)
-- **Frontend & Edge Portal:** **Glassmorphism UI, Chart.js & Vercel Edge CDN** (optimized for **Vercel Free Tier**)
 
 ---
 
